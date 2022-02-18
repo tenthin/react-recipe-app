@@ -8,12 +8,12 @@ const App = () => {
   
 
   useEffect(() => {
-
+    getRecipes();
   },[]);
 
   const getRecipes = async() => {
     const response = await fetch(`https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${API_KEY}`);
-    const data = response.json();
+    const data = await response.json();
     console.log(data);
   }
 
